@@ -1,7 +1,7 @@
-<?xml version='1.0' encoding='UTF-8'?><dataservice name="fdsa">
+<?xml version='1.0' encoding='UTF-8'?><dataservice name="service3">
 
 
-	<service-vdb-file path="fdsaVDB-vdb.xml" publish="ifMissing" vdbName="fdsaVDB" vdbVersion="1">
+	<service-vdb-file path="service3VDB-vdb.xml" publish="ifMissing" vdbName="service3VDB" vdbVersion="1">
 	</service-vdb-file>
 
 </dataservice>
