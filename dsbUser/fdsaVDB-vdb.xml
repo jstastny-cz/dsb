@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<vdb name="fdsaVDB" version="1">
+
+<property name="dsbTeiidStatus" value="Error"/>
+<property name="dsbTeiidStatusMessage" value="TEIID60016 Duplicate Column views.fdsaView.doublenum"/>
+
+<model name="views" type="VIRTUAL">
+<metadata type="DDL">
+<![CDATA[CREATE VIEW fdsaView (
+	RowId integer,
+	doublenum double,
+	booleanvalue boolean,
+	intnum long,
+	longnum long,
+	floatnum double,
+	bytenum bigdecimal,
+	stringkey string,
+	objectvalue blob,
+	stringnum string,
+	bigintegervalue bigdecimal,
+	datevalue date,
+	charvalue string,
+	timevalue time,
+	bigdecimalvalue bigdecimal,
+	timestampvalue timestamp,
+	intkey long,
+	shortvalue long,
+	doublenum double,
+	booleanvalue boolean,
+	intnum long,
+	longnum long,
+	floatnum double,
+	bytenum bigdecimal,
+	stringkey string,
+	objectvalue blob,
+	stringnum string,
+	bigintegervalue bigdecimal,
+	datevalue date,
+	charvalue string,
+	timevalue time,
+	bigdecimalvalue bigdecimal,
+	timestampvalue timestamp,
+	intkey long,
+	shortvalue long,
+	PRIMARY KEY(RowId)
+)
+AS
+;
+]]>
+
+</metadata>
+</model>
+<model name="ds1" type="PHYSICAL">
+<source name="vertica" translator-name="vertica" connection-jndi-name="java:/VerticaDS"/>
+<metadata type="DDL">
+<![CDATA[CREATE FOREIGN TABLE smalla (
+	doublenum double DEFAULT '' OPTIONS ("NAMEINSOURCE" '"doublenum"', "NATIVE_TYPE" 'Float'),
+	booleanvalue boolean DEFAULT '' OPTIONS ("NAMEINSOURCE" '"booleanvalue"', "NATIVE_TYPE" 'Boolean', "RADIX" '0'),
+	intnum long DEFAULT '' OPTIONS ("NAMEINSOURCE" '"intnum"', "NATIVE_TYPE" 'Integer'),
+	longnum long DEFAULT '' OPTIONS ("NAMEINSOURCE" '"longnum"', "NATIVE_TYPE" 'Integer'),
+	floatnum double DEFAULT '' OPTIONS ("NAMEINSOURCE" '"floatnum"', "NATIVE_TYPE" 'Float'),
+	bytenum bigdecimal(8) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"bytenum"', "NATIVE_TYPE" 'Numeric'),
+	stringkey string(20) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"stringkey"', "NATIVE_TYPE" 'Varchar'),
+	objectvalue blob(32000000) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"objectvalue"', "NATIVE_TYPE" 'Long Varbinary'),
+	stringnum string(20) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"stringnum"', "NATIVE_TYPE" 'Varchar'),
+	bigintegervalue bigdecimal(38) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"bigintegervalue"', "NATIVE_TYPE" 'Numeric'),
+	datevalue date DEFAULT '' OPTIONS ("NAMEINSOURCE" '"datevalue"', "NATIVE_TYPE" 'Date'),
+	charvalue string(1) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"charvalue"', "NATIVE_TYPE" 'Char'),
+	timevalue time DEFAULT '' OPTIONS ("NAMEINSOURCE" '"timevalue"', "NATIVE_TYPE" 'Time'),
+	bigdecimalvalue bigdecimal(16) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"bigdecimalvalue"', "NATIVE_TYPE" 'Numeric'),
+	timestampvalue timestamp DEFAULT '' OPTIONS ("NAMEINSOURCE" '"timestampvalue"', "NATIVE_TYPE" 'Timestamp'),
+	intkey long NOT NULL DEFAULT '' OPTIONS ("NAMEINSOURCE" '"intkey"', "NATIVE_TYPE" 'Integer'),
+	shortvalue long DEFAULT '' OPTIONS ("NAMEINSOURCE" '"shortvalue"', "NATIVE_TYPE" 'Integer')
+) OPTIONS ("UPDATABLE" 'TRUE', "NAMEINSOURCE" '"smalla"');
+
+CREATE FOREIGN TABLE smallb (
+	doublenum double DEFAULT '' OPTIONS ("NAMEINSOURCE" '"doublenum"', "NATIVE_TYPE" 'Float'),
+	booleanvalue boolean DEFAULT '' OPTIONS ("NAMEINSOURCE" '"booleanvalue"', "NATIVE_TYPE" 'Boolean', "RADIX" '0'),
+	intnum long DEFAULT '' OPTIONS ("NAMEINSOURCE" '"intnum"', "NATIVE_TYPE" 'Integer'),
+	longnum long DEFAULT '' OPTIONS ("NAMEINSOURCE" '"longnum"', "NATIVE_TYPE" 'Integer'),
+	floatnum double DEFAULT '' OPTIONS ("NAMEINSOURCE" '"floatnum"', "NATIVE_TYPE" 'Float'),
+	bytenum bigdecimal(8) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"bytenum"', "NATIVE_TYPE" 'Numeric'),
+	stringkey string(20) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"stringkey"', "NATIVE_TYPE" 'Varchar'),
+	objectvalue blob(32000000) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"objectvalue"', "NATIVE_TYPE" 'Long Varbinary'),
+	stringnum string(20) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"stringnum"', "NATIVE_TYPE" 'Varchar'),
+	bigintegervalue bigdecimal(38) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"bigintegervalue"', "NATIVE_TYPE" 'Numeric'),
+	datevalue date DEFAULT '' OPTIONS ("NAMEINSOURCE" '"datevalue"', "NATIVE_TYPE" 'Date'),
+	charvalue string(1) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"charvalue"', "NATIVE_TYPE" 'Char'),
+	timevalue time DEFAULT '' OPTIONS ("NAMEINSOURCE" '"timevalue"', "NATIVE_TYPE" 'Time'),
+	bigdecimalvalue bigdecimal(16) DEFAULT '' OPTIONS ("NAMEINSOURCE" '"bigdecimalvalue"', "NATIVE_TYPE" 'Numeric'),
+	timestampvalue timestamp DEFAULT '' OPTIONS ("NAMEINSOURCE" '"timestampvalue"', "NATIVE_TYPE" 'Timestamp'),
+	intkey long NOT NULL DEFAULT '' OPTIONS ("NAMEINSOURCE" '"intkey"', "NATIVE_TYPE" 'Integer'),
+	shortvalue long DEFAULT '' OPTIONS ("NAMEINSOURCE" '"shortvalue"', "NATIVE_TYPE" 'Integer')
+) OPTIONS ("UPDATABLE" 'TRUE', "NAMEINSOURCE" '"smallb"');
+]]>
+
+</metadata>
+</model>
+
+</vdb>
